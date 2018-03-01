@@ -44,7 +44,7 @@ var login = (req, res) => {
               success: true,
               message: 'Authentication success.',
               token: token,
-              username: user.username
+              data: user
             })
           } else {
             res.status(401).json({

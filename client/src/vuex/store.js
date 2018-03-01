@@ -9,10 +9,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    login: {
-      status: true,
-      userID: '59929e5ca3ad4d0ab54e9d6e'
-    },
+    login: [],
     articles: [],
     oneArticle: {}
   },
@@ -25,17 +22,18 @@ const store = new Vuex.Store({
     },
     setLogin (state, payload) {
       state.login.status = true
+      state.login = payload
       state.login.userID = payload.id
     }
   },
   actions: {
-    doLogin ({ commit }, payload) {
+    doLogin (commit, payload) {
       axios.post('/users/login', {
         username: payload.username,
         password: payload.password
-      }).then(({ response }) => {
-        console.log(response)
-        commit('setLogin', response)
+      }).then(response => {
+        console.log('response ada ga', response)
+        commit('setLogin', response.data.data)
         localStorage.setItem('token', response.data.token)
       }).catch(err => console.log(err))
     },
