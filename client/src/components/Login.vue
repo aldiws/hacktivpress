@@ -45,7 +45,7 @@ export default {
     ...mapActions([
       'doLogin'
     ]),
-    login () {      
+    login () {
       this.doLogin(this.formLogin)
       this.$router.push('/')
     },

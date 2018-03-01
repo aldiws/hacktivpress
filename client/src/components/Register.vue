@@ -50,6 +50,12 @@ export default {
     ]),
     register () {
       this.doRegister(this.formRegister)
+      swal({
+        title: 'Good job!',
+        text: 'Register success!',
+        icon: 'success',
+        button: 'Aww yiss!'
+      })
       this.$router.push('/login')
     }
   }

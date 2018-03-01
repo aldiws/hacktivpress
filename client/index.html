@@ -3,7 +3,18 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>hacktivpress-front</title>
+    <script>
+      $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+          var value = $(this).val().toLowerCase();
+          $("#myTable").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          })
+        })
+      });
+    </script>
   </head>
   <body>
     <div id="app"></div>
