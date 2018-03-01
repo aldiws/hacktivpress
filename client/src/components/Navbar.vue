@@ -11,10 +11,10 @@
             <a class="nav-link"><router-link to="/">Home</router-link></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" v-if="token === null" ><router-link to="/login">Login</router-link></a>
+            <a class="nav-link" v-if="token == null" ><router-link to="/articles">Articles</router-link></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" v-if="token == null" ><router-link to="/articles">Articles</router-link></a>
+            <a class="nav-link" v-if="token === null" ><router-link to="/login">Login</router-link></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" v-if="token === null"><router-link to="/register">Register</router-link></a>
